@@ -109,7 +109,7 @@ waveform = []
 def detect_speakers(audio_data_):
     pipeline = Pipeline.from_pretrained(
         "pyannote/speaker-diarization-3.1",
-        use_auth_token="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")
+        use_auth_token="")
 
     # send pipeline to GPU (when available)
     pipeline.to(torch.device("cpu"))
