@@ -7710,7 +7710,7 @@ Stream in audio, process, calling a machine learning classification model and sa
 <span class="k">def</span> <span class="nf">detect_speakers</span><span class="p">(</span><span class="n">audio_data_</span><span class="p">):</span>
     <span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
         <span class="s2">"pyannote/speaker-diarization-3.1"</span><span class="p">,</span>
-        <span class="n">use_auth_token</span><span class="o">=</span><span class="s2">"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"</span><span class="p">)</span>
+        <span class="n">use_auth_token</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
 
     <span class="c1"># send pipeline to GPU (when available)</span>
     <span class="n">pipeline</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cpu"</span><span class="p">))</span>
