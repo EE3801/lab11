@@ -524,5 +524,4 @@ Submit your ipynb as a pdf. Save your ipynb as a html file, open in browser and 
     
     Section 2 Question 8, 9
 
-    Answer the questions to ponder.
 
