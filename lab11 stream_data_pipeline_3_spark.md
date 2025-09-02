@@ -88,20 +88,18 @@ os.chdir(home_directory+'/Documents/projects/ee3801')
 
 7. Enter the the following codes to test the installed spark and jupyter. The codes below create a Spark Application through import and create a Spark session, a context and test the connection to Spark.
 
-- SparkSession - the primary entry point for programming Spark with the Dataset and DataFrame API in PySpark.\
-  .builder - initiates the building process\
-  .master("local") - specifies the Spark master URL, here indicating local execution.\
-  .getOrCreate() - returns an existing SparkSession if one is active, otherwise it creates a new one.
+    - SparkSession - the primary entry point for programming Spark with the Dataset and DataFrame API in PySpark.\
+    .builder - initiates the building process\
+    .master("local") - specifies the Spark master URL, here indicating local execution.\
+    .getOrCreate() - returns an existing SparkSession if one is active, otherwise it creates a new one.
 
-- SparkContext - represents the connection to a Spark cluster and serves as the entry point to Spark's core functionalities. It is the foundational component for building and running Spark applications, particularly those based on Resilient Distributed Datasets (RDDs).
+    - SparkContext - represents the connection to a Spark cluster and serves as the entry point to Spark's core functionalities. It is the foundational component for building and running Spark applications, particularly those based on Resilient Distributed Datasets (RDDs).
 
-- spark.range(5).show()\
-  spark.range(5) - This creates a PySpark DataFrame with a single column named id. This column contains a sequence of numbers starting from 0 and going up to (but not including) 5. Therefore, the id column will contain the values 0, 1, 2, 3, and 4. This is analogous to Python's built-in range() function.\
-  .show() - This method is then called on the generated DataFrame. Its purpose is to display the contents of the DataFrame to the console in a human-readable, tabular format.
+    - spark.range(5).show()\
+    spark.range(5) - This creates a PySpark DataFrame with a single column named id. This column contains a sequence of numbers starting from 0 and going up to (but not including) 5. Therefore, the id column will contain the values 0, 1, 2, 3, and 4. This is analogous to Python's built-in range() function.\
+    .show() - This method is then called on the generated DataFrame. Its purpose is to display the contents of the DataFrame to the console in a human-readable, tabular format.
 
-In modern Spark versions (2.0 and later), SparkSession is the preferred entry point, which unifies SparkContext, SQLContext, and HiveContext, providing a more comprehensive API for interacting with Spark, including Spark SQL and DataFrame/Dataset APIs. However, SparkContext remains accessible through SparkSession (e.g., spark.sparkContext) for RDD-based operations when needed.
-
-
+    In modern Spark versions (2.0 and later), SparkSession is the preferred entry point, which unifies SparkContext, SQLContext, and HiveContext, providing a more comprehensive API for interacting with Spark, including Spark SQL and DataFrame/Dataset APIs. However, SparkContext remains accessible through SparkSession (e.g., spark.sparkContext) for RDD-based operations when needed.
 
     ```python
     # import SparkSession
@@ -364,13 +362,13 @@ In this section, I will refer to an online resource https://github.com/cluster-a
 
     ```docker-compose up```
 
-- CTRL-C to exit the installation.
-- Start up the services. 
+    - CTRL-C to exit the installation.
+    - Start up the services. 
 
-    ```docker stop jupyterlab spark-master spark-worker-1 spark-worker-2```
+        ```docker stop jupyterlab spark-master spark-worker-1 spark-worker-2```
 
-- Check the containers installed and take note of the ports.
-    ```docker ps -a```
+    - Check the containers installed and take note of the ports.
+        ```docker ps -a```
 
     <img src="image/week11_image10.png">
 
@@ -378,7 +376,7 @@ In this section, I will refer to an online resource https://github.com/cluster-a
 
     <img src="image/week11_image4.png">
 
-- From the image above, you can access from the browser:
+    - From the image above, you can access from the browser:
 
     jupyterlab: http://<ip_address>:8888\
     We use JupyterLab Integrated Development Environment (IDE) to write codes and run them.\

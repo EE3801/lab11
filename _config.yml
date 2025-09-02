@@ -1,3 +1,25 @@
 title: Lab 11
 remote_theme: just-the-docs/just-the-docs
 
+nav_external_links:
+  - title: 1. Spark without Clusters
+    url: lab11%20stream_data_pipeline_3_spark.html#1-spark-without-clusters
+  - title: 1.1 Install Spark
+    url: lab11%20stream_data_pipeline_3_spark.html#11-install-spark
+  - title: 1.2 Introduction to Spark
+    url: lab11%20stream_data_pipeline_3_spark.html#12-introduction-to-spark
+  - title: 2. Spark with Clusters
+    url: lab11%20stream_data_pipeline_3_spark.html#2-spark-with-clusters
+  - title: 2. Spark with Clusters
+    url: lab11%20stream_data_pipeline_3_spark.html#2-spark-with-clusters
+  - title: Conclusion
+    url: lab11%20stream_data_pipeline_3_spark.html#conclusion
+  - title: Submissions by Wed 9pm (5 Nov 2025)
+    url: lab11%20stream_data_pipeline_3_spark.html#submissions-by-wed-9pm-5-nov-2025
+    
+  
+just_the_docs:
+  custom_css:
+    - assets/css/style.scss
+    - assets/js/fix-links.js
+
