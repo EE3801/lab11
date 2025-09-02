@@ -103,27 +103,26 @@ In modern Spark versions (2.0 and later), SparkSession is the preferred entry po
 
 
 
-```python
-# import SparkSession
-from pyspark.sql import SparkSession
+    ```python
+    # import SparkSession
+    from pyspark.sql import SparkSession
 
-# Create SparkApplication
-spark = SparkSession\
-            .builder\
-            .master("local")\
-            .getOrCreate()
-sc = spark.sparkContext
+    # Create SparkApplication
+    spark = SparkSession\
+                .builder\
+                .master("local")\
+                .getOrCreate()
+    sc = spark.sparkContext
 
-# Test PySpark
-spark.range(5).show()
-```
+    # Test PySpark
+    spark.range(5).show()
+    ```
 
 8. Execute ```spark``` will show the version of spark, app name, etc.
 
-
-```python
-spark
-```
+    ```python
+    spark
+    ```
 
 9. Enter the the following codes for parallel processing in spark.
 
@@ -134,17 +133,17 @@ spark
   - rdd.sum(): This performs an action on the RDD to calculate the sum of all its elements. The sum() action triggers the computation across the distributed partitions of the RDD and returns the final sum to the driver program.
 
 
-```python
-from pyspark.sql import SparkSession
+    ```python
+    from pyspark.sql import SparkSession
 
-# Spark session & context
-spark = SparkSession.builder.master("local").appName('Local-Sum100').getOrCreate()
-sc = spark.sparkContext
+    # Spark session & context
+    spark = SparkSession.builder.master("local").appName('Local-Sum100').getOrCreate()
+    sc = spark.sparkContext
 
-# Sum of the first 100 whole numbers
-rdd = sc.parallelize(range(100 + 1))
-rdd.sum()
-```
+    # Sum of the first 100 whole numbers
+    rdd = sc.parallelize(range(100 + 1))
+    rdd.sum()
+    ```
 
 10. Access Spark Web UI. Access link:
 
@@ -186,60 +185,60 @@ rdd.sum()
   - type(df): will confirm you are using Spark DataFrame pyspark.sql.dataframe.DataFrame.
 
 
-```python
-spark = SparkSession.builder.master('spark://pop-os.localdomain:7077').appName('ReadingFileToDataFrame').getOrCreate()
-df = spark.read.csv('carpark_system.csv', header=True, inferSchema=True)
-df.show(5)
-df.printSchema()
-type(df) 
+    ```python
+    spark = SparkSession.builder.master('spark://pop-os.localdomain:7077').appName('ReadingFileToDataFrame').getOrCreate()
+    df = spark.read.csv('carpark_system.csv', header=True, inferSchema=True)
+    df.show(5)
+    df.printSchema()
+    type(df) 
 
-```
+    ```
 
 12. You can write standard SQL to query the Spark table. 
 - df.createOrReplaceTempView('carpark_system'): creats a table in the default database for further inspection, you use the createOrReplaceTempView method. You can then write query statements
 
 
-```python
-df.createOrReplaceTempView('carpark_system')
+    ```python
+    df.createOrReplaceTempView('carpark_system')
 
-statement = "select * from carpark_system limit 10"
+    statement = "select * from carpark_system limit 10"
 
-results = spark.sql(statement)
-results.show()
-```
+    results = spark.sql(statement)
+    results.show()
+    ```
 
 13. You can also convert to Pandas DataFrame using ```toPandas``` function.
 
 
-```python
-statement = "select * from carpark_system limit 10"
+    ```python
+    statement = "select * from carpark_system limit 10"
 
-results = spark.sql(statement)
-results10_df = results.toPandas()
-results10_df
-```
+    results = spark.sql(statement)
+    results10_df = results.toPandas()
+    results10_df
+    ```
 
 14. Lazy Evaluation - Allows Spark to calculate your entire data flow (or transformations on data), not excuting it immediately when they are defined. Spark builds an execution plan, known as Directed Acyclic Graph (DAG), representing the sequence of operations. The actual computation is deferred until an action is triggers. Transformation functions are like ```map```, ```filter```, ```select```, ```join```, etc. Action functions are like ```collect```, ```count```, ```show```, ```write```, etc. This method executes tasks efficiently. reference: https://medium.com/@john_tringham/spark-concepts-simplified-lazy-evaluation-d398891e0568
 
 
-```python
-# Transformation
-# Spark will not execute this set of codes because these are Transformation functions. 
-# No output will be processed until you complete writing your entire code and then it 
-# generates the proper plan based on the code you have written.
+    ```python
+    # Transformation
+    # Spark will not execute this set of codes because these are Transformation functions. 
+    # No output will be processed until you complete writing your entire code and then it 
+    # generates the proper plan based on the code you have written.
 
-filter_Park2 = df.LocationID == "Park2"
-results_Park2 = df.filter(filter_Park2)
-```
+    filter_Park2 = df.LocationID == "Park2"
+    results_Park2 = df.filter(filter_Park2)
+    ```
 
 
-```python
-# Action
-# To actually execute the transformation block, we have something called Actions function. 
-# Run the action and spark will run the entire transformation block and give us the final output.
+    ```python
+    # Action
+    # To actually execute the transformation block, we have something called Actions function. 
+    # Run the action and spark will run the entire transformation block and give us the final output.
 
-results_Park2.show()
-```
+    results_Park2.show()
+    ```
 
 15. In the jupyter, create a new jupyter notebook, copy-paste and run the codes below. <b>Screen capture the pages shown in http://<ip_address>:4041 (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
 
@@ -333,7 +332,7 @@ results_Park2.show()
         time.sleep(1000000) 
     ```
 
-For detail guide on Spark, refer to this link https://spark.apache.org/docs/latest/sql-getting-started.html. Go through this youtube video to answer the questions below https://www.youtube.com/watch?v=v_uodKAywXA.
+    For detail guide on Spark, refer to this link https://spark.apache.org/docs/latest/sql-getting-started.html. Go through this youtube video to answer the questions below https://www.youtube.com/watch?v=v_uodKAywXA.
 
 16. What do you think is Apache Spark? What motivated the creation of Apache Spark?
 
