@@ -124,11 +124,11 @@ os.chdir(home_directory+'/Documents/projects/ee3801')
 
 9. Enter the the following codes for parallel processing in spark.
 
-  - appName('Local-Sum100') - Sets the name of the Spark application to 'Local-Sum100'.
-  - rdd = sc.parallelize(range(100 + 1)): creates a Resilient Distributed Dataset (RDD) named rdd\
-  - range(100 + 1): Generates a sequence of numbers from 0 to 100 (inclusive). This represents the first 101 whole numbers (0 to 100).\
-  - sc.parallelize(): Distributes the collection of numbers across the Spark cluster (in this case, locally) to create an RDD, enabling parallel processing.
-  - rdd.sum(): This performs an action on the RDD to calculate the sum of all its elements. The sum() action triggers the computation across the distributed partitions of the RDD and returns the final sum to the driver program.
+    - appName('Local-Sum100') - Sets the name of the Spark application to 'Local-Sum100'.
+    - rdd = sc.parallelize(range(100 + 1)): creates a Resilient Distributed Dataset (RDD) named rdd\
+    - range(100 + 1): Generates a sequence of numbers from 0 to 100 (inclusive). This represents the first 101 whole numbers (0 to 100).\
+    - sc.parallelize(): Distributes the collection of numbers across the Spark cluster (in this case, locally) to create an RDD, enabling parallel processing.
+    - rdd.sum(): This performs an action on the RDD to calculate the sum of all its elements. The sum() action triggers the computation across the distributed partitions of the RDD and returns the final sum to the driver program.
 
 
     ```python
@@ -145,42 +145,42 @@ os.chdir(home_directory+'/Documents/projects/ee3801')
 
 10. Access Spark Web UI. Access link:
 
-- At the server, enter ```docker ps -a```. Identify the port for dev_jupyter_pyspark. 
+    - At the server, enter ```docker ps -a```. Identify the port for dev_jupyter_pyspark. 
 
-    <img src="image/week11_image9.png" width="80%">
+        <img src="image/week11_image9.png" width="80%">
 
-- To access the server from browser, you will need to access EC2 > Security Groups > Edit inbound rules > Add rule > Save rules
-    
-    ```
-    Type: Custom TCP
-    Port Range: 4041
-    Source: Anywhere-IPv4
-    ```
+    - To access the server from browser, you will need to access EC2 > Security Groups > Edit inbound rules > Add rule > Save rules
+        
+        ```
+        Type: Custom TCP
+        Port Range: 4041
+        Source: Anywhere-IPv4
+        ```
 
-    ```docker start dev_jupyter_pyspark```
+        ```docker start dev_jupyter_pyspark```
 
-- Go to browser with link ```http://<ip_address>:4041```.
+    - Go to browser with link ```http://<ip_address>:4041```.
 
-    <img src="image/week11_image5.png" width="80%">
+        <img src="image/week11_image5.png" width="80%">
 
-- Expand the Event Timeline. You will observe the time of events triggered.
+    - Expand the Event Timeline. You will observe the time of events triggered.
 
-    <img src="image/week11_image7.png" width="80%">
+        <img src="image/week11_image7.png" width="80%">
 
-- This blog shows more detailed description of Apache Spark Web UI. https://medium.com/@suffyan.asad1/beginners-guide-to-spark-ui-how-to-monitor-and-analyze-spark-jobs-b2ada58a85f7 
+    - This blog shows more detailed description of Apache Spark Web UI. https://medium.com/@suffyan.asad1/beginners-guide-to-spark-ui-how-to-monitor-and-analyze-spark-jobs-b2ada58a85f7 
 
 11. Upload the generated data from lab8. Enter the the following codes to read file as a dataframe.
 
-  - master('spark://pop-os.localdomain:7077'): Specifies that Spark should connect to a standalone Spark cluster running on pop-os.localdomain at port 7077.
-  - appName('ReadingFileToDataFrame'): Sets the name of the Spark application, which will be visible in the Spark web UI. 
-  -  getOrCreate(): Returns an existing SparkSession if one is already active, otherwise creates a new one.
-  - spark.read.csv(): This line reads the carpark_system.csv file into a Spark DataFrame named df. By default, Spark's read.csv() method:
-    - Assumes no header row, treating the first row as data.
-    - Infers all column types as StringType (unless inferSchema is set to True).
-    - Assigns default column names like _c0, _c1, etc.
-  - df.show(5): This command prints the first five rows of the df DataFrame to the console.
-  - df.printSchema(): This command displays the schema (column names and their data types) of the df DataFrame to the console. 
-  - type(df): will confirm you are using Spark DataFrame pyspark.sql.dataframe.DataFrame.
+    - master('spark://pop-os.localdomain:7077'): Specifies that Spark should connect to a standalone Spark cluster running on pop-os.localdomain at port 7077.
+    - appName('ReadingFileToDataFrame'): Sets the name of the Spark application, which will be visible in the Spark web UI. 
+    -  getOrCreate(): Returns an existing SparkSession if one is already active, otherwise creates a new one.
+    - spark.read.csv(): This line reads the carpark_system.csv file into a Spark DataFrame named df. By default, Spark's read.csv() method:
+        - Assumes no header row, treating the first row as data.
+        - Infers all column types as StringType (unless inferSchema is set to True).
+        - Assigns default column names like _c0, _c1, etc.
+    - df.show(5): This command prints the first five rows of the df DataFrame to the console.
+    - df.printSchema(): This command displays the schema (column names and their data types) of the df DataFrame to the console. 
+    - type(df): will confirm you are using Spark DataFrame pyspark.sql.dataframe.DataFrame.
 
 
     ```python
@@ -193,7 +193,7 @@ os.chdir(home_directory+'/Documents/projects/ee3801')
     ```
 
 12. You can write standard SQL to query the Spark table. 
-- df.createOrReplaceTempView('carpark_system'): creats a table in the default database for further inspection, you use the createOrReplaceTempView method. You can then write query statements
+    - df.createOrReplaceTempView('carpark_system'): creats a table in the default database for further inspection, you use the createOrReplaceTempView method. You can then write query statements
 
 
     ```python
@@ -402,8 +402,8 @@ In this section, I will refer to an online resource https://github.com/cluster-a
 
 7. By default, if you observe the docker-compose.yml file. We have set for each worker to use:
 
-- SPARK_WORKER_CORES=1
-- SPARK_WORKER_MEMORY=512m
+    - SPARK_WORKER_CORES=1
+    - SPARK_WORKER_MEMORY=512m
 
 8. In the jupyterlab, create a new jupyter notebook, copy-paste and run the same codes below. <b>Screen capture the pages shown in http://<ip_address>:4040 (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
 
