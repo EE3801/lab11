@@ -378,8 +378,14 @@ In this section, I will refer to an online resource https://github.com/cluster-a
 
     - From the image above, you can access from the browser:
 
-    jupyterlab: http://<ip_address>:8888\
-    We use JupyterLab Integrated Development Environment (IDE) to write codes and run them.\
+    jupyterlab: http://<ip_address>:8888
+    We use JupyterLab Integrated Development Environment (IDE) to write codes and run them.
+       To access the server from browser (for ports stated below 8888, 4040, 8080,8081, 8082), you will need to access EC2 > Security Groups > Edit inbound rules > Add rule > Save rules 
+        ```
+        Type: Custom TCP
+        Port Range: <port number>
+        Source: Anywhere-IPv4
+        ```
     <img src="image/week11_image11.png" width="80%">
 
     Spark jobs: http://<ip_address>:4040\
@@ -400,12 +406,12 @@ In this section, I will refer to an online resource https://github.com/cluster-a
     Spark Worker 2: http:<ip_address>:8082\
     <img src="image/week11_image17.png" width="80%">\
 
-7. By default, if you observe the docker-compose.yml file. We have set for each worker to use:
+8. By default, if you observe the docker-compose.yml file. We have set for each worker to use:
 
     - SPARK_WORKER_CORES=1
     - SPARK_WORKER_MEMORY=512m
 
-8. In the jupyterlab, create a new jupyter notebook, copy-paste and run the same codes below. <b>Screen capture the pages shown in http://<ip_address>:4040 (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
+9. In the jupyterlab, create a new jupyter notebook, copy-paste and run the same codes below. <b>Screen capture the pages shown in http://<ip_address>:4040 (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
 
     ```python
     from pyspark import SparkConf
@@ -491,7 +497,7 @@ In this section, I will refer to an online resource https://github.com/cluster-a
         time.sleep(1000000) 
     ```
 
-9. Comparing the two approaches (no cluster and with cluster), why do you think we need a cluster setup?
+10. Comparing the two approaches (no cluster and with cluster), why do you think we need a cluster setup?
 
 <!-- 10. Assignment (Choose one to complete): 
 
