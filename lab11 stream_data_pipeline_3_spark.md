@@ -365,7 +365,7 @@ In this section, I will refer to an online resource https://github.com/cluster-a
     - CTRL-C to exit the installation.
     - Start up the services. 
 
-        ```docker stop jupyterlab spark-master spark-worker-1 spark-worker-2```
+        ```docker start jupyterlab spark-master spark-worker-1 spark-worker-2```
 
     - Check the containers installed and take note of the ports.
         ```docker ps -a```
