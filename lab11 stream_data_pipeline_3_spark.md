@@ -386,7 +386,8 @@ In this section, I will refer to an online resource https://github.com/cluster-a
         Port Range: <port number>
         Source: Anywhere-IPv4
         ```
-    <img src="image/week11_image11.png" width="80%">
+
+   <img src="image/week11_image11.png" width="80%">
 
     Spark jobs: http://<ip_address>:4040
    
