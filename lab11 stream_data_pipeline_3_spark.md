@@ -376,11 +376,11 @@ In this section, I will refer to an online resource https://github.com/cluster-a
 
     <img src="image/week11_image4.png">
 
-    - From the image above, you can access from the browser:
+        - From the image above, you can access from the browser:
 
-    jupyterlab: http://<ip_address>:8888
-    We use JupyterLab Integrated Development Environment (IDE) to write codes and run them.
-       To access the server from browser (for ports stated below 8888, 4040, 8080,8081, 8082), you will need to access EC2 > Security Groups > Edit inbound rules > Add rule > Save rules 
+        jupyterlab: http://<ip_address>:8888
+        We use JupyterLab Integrated Development Environment (IDE) to write codes and run them.
+           To access the server from browser (for ports stated below 8888, 4040, 8080,8081, 8082), you will need to access EC2 > Security Groups > Edit inbound rules > Add rule > Save rules 
         ```
         Type: Custom TCP
         Port Range: <port number>
@@ -388,23 +388,24 @@ In this section, I will refer to an online resource https://github.com/cluster-a
         ```
     <img src="image/week11_image11.png" width="80%">
 
-    Spark jobs: http://<ip_address>:4040\
-    Observe all the spark jobs.\
-    <img src="image/week11_image12.png" width="80%">\
-    If you click on the job ```showString at NativeMethodAccessorImpl.java:0 (Job 2)```.\
-    <img src="image/week11_image13.png" width="80%">\
-    If you click on DAG, you will see the DAG visualization of the data flow.\
-    <img src="image/week11_image14.png" width="50%">
+        Spark jobs: http://<ip_address>:4040
+   
+        Observe all the spark jobs.
+        <img src="image/week11_image12.png" width="80%">
+        If you click on the job ```showString at NativeMethodAccessorImpl.java:0 (Job 2)```.
+        <img src="image/week11_image13.png" width="80%">
+        If you click on DAG, you will see the DAG visualization of the data flow.
+        <img src="image/week11_image14.png" width="50%">
 
-    Spark Master: http:<ip_address>:8080\
-    The master node processes the input and distributes the computing workload to worker nodes, sending back the results to the IDE.\
-    <img src="image/week11_image15.png" width="80%">\
+        Spark Master: http:<ip_address>:8080
+        The master node processes the input and distributes the computing workload to worker nodes, sending back the results to the IDE.
+        <img src="image/week11_image15.png" width="80%">
 
-    Spark Worker 1: http:<ip_address>:8081\
-    <img src="image/week11_image16.png" width="80%">\
+        Spark Worker 1: http:<ip_address>:8081
+        <img src="image/week11_image16.png" width="80%">
 
-    Spark Worker 2: http:<ip_address>:8082\
-    <img src="image/week11_image17.png" width="80%">\
+        Spark Worker 2: http:<ip_address>:8082
+        <img src="image/week11_image17.png" width="80%">
 
 8. By default, if you observe the docker-compose.yml file. We have set for each worker to use:
 
