@@ -1,4 +1,4 @@
-This lab uses Apache Spark to work with Stream Data Pipeline.
+This laboratory utilizes Apache Spark to process data through a Stream Data Pipeline.
 
 [Lab 11 Stream Data Pipeline III](./lab11%20stream_data_pipeline_3_spark.html)
 
