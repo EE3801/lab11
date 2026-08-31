@@ -187,6 +187,12 @@ os.chdir(os.path.join(home_directory, 'Documents', 'projects', 'ee3801'))
         Source: Custom
         0.0.0.0/0
         ```
+        For jupyterlab port 8889
+        ```text
+        Type: Custom TCP
+        Port Range: <port number>
+        Source: My IP
+        ```
 
         ```bash
         docker restart dev_jupyter_pyspark
@@ -427,6 +433,12 @@ In this section, we will refer to an online resource https://github.com/cluster-
     Type: Custom TCP
     Port Range: <port number>
     Source: Anywhere-IPv4
+    ```
+    For jupyterlab port 8888
+    ```text
+    Type: Custom TCP
+    Port Range: <port number>
+    Source: My IP
     ```
 
     <img src="image/week11_image11.png" width="80%">
