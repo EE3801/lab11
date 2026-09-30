@@ -5,6 +5,8 @@ Install and use Apache Spark with Docker on an AWS EC2 instance.
 
 Create Apache Spark without a cluster, then with a cluster, and compare the difference.
 
+Note: When copying the codes to your notebook, select all and ```Shift+Tab``` to remove leading spaces.
+
 Create a new Jupyter notebook file named `stream_data_pipeline_3_spark.ipynb`.
 
 <!-- ```python
