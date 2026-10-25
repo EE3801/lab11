@@ -85,7 +85,7 @@ os.chdir(os.path.join(home_directory, 'Documents', 'projects', 'ee3801'))
         - replace ```127.0.0.1``` with the AWS EC2 instance public ip address <ip_address> 
         - replace port 8888 with port 8889.
 
-            e.g. ```http://ec2-xxx-xxx-xxx-xx.ap-southeast-1.compute.amazonaws.com:8889/lab?token==************.```
+            e.g. ```http://<ip_address>:8889/lab?token==************.```
         - if you cannot locate the token, you can run the following to retrieve the token:
             ```bash
             docker exec -it dev_jupyter_pyspark /bin/bash
@@ -210,8 +210,8 @@ os.chdir(os.path.join(home_directory, 'Documents', 'projects', 'ee3801'))
 
     - Access the cluster services from your browser:
 
-        JupyterLab: http://<ip_address>:8889\
-        Spark jobs UI: http://<ip_address>:4041
+        JupyterLab: ```http://<ip_address>:8889```\
+        Spark jobs UI: ```http://<ip_address>:4041```
 
     - This blog shows more detailed description of Apache Spark Web UI. https://medium.com/@suffyan.asad1/beginners-guide-to-spark-ui-how-to-monitor-and-analyze-spark-jobs-b2ada58a85f7 
 
@@ -288,7 +288,7 @@ os.chdir(os.path.join(home_directory, 'Documents', 'projects', 'ee3801'))
 
 15. In the `stream_data_pipeline_3_spark.ipynb` new empty cell, copy-paste and run the codes below. 
 
-    <b>Screen capture the pages shown in http://<ip_address>:4041 \
+    <b>Screen capture the pages shown in ```http://<ip_address>:4041```\
     (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
 
     The code below does the following:
@@ -445,7 +445,7 @@ In this section, we will refer to an online resource https://github.com/cluster-
 
     <img src="image/week11_image11.png" width="80%">
 
-    Observe Spark jobs in the UI http://<ip_address>:4040. You can only see the the events in the timeline after executing the notebook process. This process will take some time to complete all the tasks.:
+    Observe Spark jobs in the UI ```http://<ip_address>:4040```. You can only see the the events in the timeline after executing the notebook process. This process will take some time to complete all the tasks.:
 
     <img src="image/week11_image12.png" width="80%">
         
@@ -455,17 +455,17 @@ In this section, we will refer to an online resource https://github.com/cluster-
     If you click on DAG, you will see the DAG visualization of the data flow.
     <img src="image/week11_image14.png" width="50%">
 
-    Spark Master: http:<ip_address>:8080
+    Spark Master: ```http:<ip_address>:8080```
     The master node processes the input and distributes the computing workload to worker nodes, sending back the results to the IDE.
     <img src="image/week11_image15.png" width="80%">
 
-    Spark Worker 1: http:<ip_address>:8081
+    Spark Worker 1: ```http:<ip_address>:8081```
     <img src="image/week11_image16.png" width="80%">
 
-    Spark Worker 2: http:<ip_address>:8082
+    Spark Worker 2: ```http:<ip_address>:8082```
     <img src="image/week11_image17.png" width="80%">
 
-8. In the jupyterlab, create a new jupyter notebook, copy-paste and run the same codes below. <b>Screen capture the pages shown in http://<ip_address>:4040 (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
+8. In the jupyterlab, create a new jupyter notebook, copy-paste and run the same codes below. <b>Screen capture the pages shown in ```http://<ip_address>:4040``` (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
 
     The code below does the following:
 
