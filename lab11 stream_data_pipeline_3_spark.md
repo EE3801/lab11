@@ -7,7 +7,7 @@ Create Apache Spark without a cluster, then with a cluster, and compare the diff
 
 Note: When copying the codes to your notebook, select all and ```Shift+Tab``` to remove leading spaces.
 
-Create a new Jupyter notebook file named `stream_data_pipeline_3_spark.ipynb`.
+<!-- Create a new Jupyter notebook file named `stream_data_pipeline_3_spark.ipynb`. -->
 
 <!-- ```python
 import os
@@ -455,14 +455,14 @@ In this section, we will refer to an online resource https://github.com/cluster-
     If you click on DAG, you will see the DAG visualization of the data flow.
     <img src="image/week11_image14.png" width="50%">
 
-    Spark Master: ```http:<ip_address>:8080```
+    Spark Master: ```http://<ip_address>:8080```
     The master node processes the input and distributes the computing workload to worker nodes, sending back the results to the IDE.
     <img src="image/week11_image15.png" width="80%">
 
-    Spark Worker 1: ```http:<ip_address>:8081```
+    Spark Worker 1: ```http://<ip_address>:8081```
     <img src="image/week11_image16.png" width="80%">
 
-    Spark Worker 2: ```http:<ip_address>:8082```
+    Spark Worker 2: ```http://<ip_address>:8082```
     <img src="image/week11_image17.png" width="80%">
 
 8. In the jupyterlab, create a new jupyter notebook, copy-paste and run the same codes below. <b>Screen capture the pages shown in ```http://<ip_address>:4040``` (Jobs, Stages, Storage, Environment, Executors and SQL/DataFrame).</b>
